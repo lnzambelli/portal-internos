@@ -1,0 +1,30 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input formControlName="nombre" type="text" class="form-control" required>      
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Interno</label>
+        <input formControlName="interno" type="text" class="form-control" required>      
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Empresa</label>
+        <input formControlName="empresa" type="text" class="form-control" required>       
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Sector</label>
+        <input formControlName="sector" type="text" class="form-control" required>       
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="text" class="form-control" required>       
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Particular</label>
+        <input formControlName="particular" type="text" class="form-control" required>       
+    </div>
+    
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary">Guardar</button>
+
+</form>

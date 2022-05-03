@@ -1,0 +1,28 @@
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Interno</th>
+            <th>Sector</th>
+            <th>Empresa</th>
+            <th>Email</th>
+            <th>Particular</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let post of Posts">
+            <td>{{post.nombre}}</td>
+            <td>{{post.interno}}</td>
+            <td>{{post.sector}}</td>
+            <td>{{post.empresa}}</td>
+            <td>{{post.email}}</td>
+            <td>{{post.particular}}</td>
+            <td class="d-flex" *ngIf="userAdmin==='admin'">
+                <button routerLink="/edit/{{post.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                <button (click)="deleteRow(post)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
